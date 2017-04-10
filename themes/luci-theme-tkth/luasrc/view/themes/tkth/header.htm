@@ -132,6 +132,7 @@
 		end
 	end
 
+    
 	local function render_changes()
 		-- calculate the number of unsaved changes
 		if tree.nodes[category] and tree.nodes[category].ucidata then
@@ -179,7 +180,8 @@
 		<header>
 			<div class="fill">
 				<div class="container">
-					<a class="brand" href="#"><%=boardinfo.hostname or "?"%></a>
+					<a class="brand" href="http://www.tkth.com.br"><a class="brand" href="http://www.tkth.com.br"target="_blank"><img src="<%=media%>/think.png" alt="LogoThink" style="width:59px;height:38px;"></a>
+					<!--<a class="brand" href="#"><%=boardinfo.hostname or "?"%></a> -->
 					<% render_topmenu() %>
 					<div class="pull-right">
 						<% render_changes() %>
@@ -196,7 +198,7 @@
 			<div class="container">
 				<div class="alert-message warning">
 					<h4><%:No password set!%></h4>
-					<%:There is no password set on this router. Please configure a root password to protect the web interface and enable SSH.%><br>
+					<%:There is no password set on this router. Please configure a root password to protect the web interface.%><br>
 					<a href="<%=pcdata(luci.dispatcher.build_url("admin/system/admin"))%>"><%:Go to password configuration...%></a>
 				</div>
 			</div>
