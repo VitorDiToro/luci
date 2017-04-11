@@ -1,5 +1,6 @@
 -- Copyright 2008 Steven Barth <steven@midlink.org>
 -- Copyright 2011-2015 Jo-Philipp Wich <jow@openwrt.org>
+-- Copyright 2017 Vitor R. Di Toro" <vitorditoro@inatel.br>, <vitorrditoro@gmail.com>
 -- Licensed to the public under the Apache License 2.0.
 
 module("luci.controller.admin.network", package.seeall)
@@ -172,6 +173,14 @@ function index()
 		page.target = template("admin_network/diagnostics")
 		page.title  = _("Diagnostics")
 		page.order  = 60
+		end
+
+                if user("PPPoEWANSettings") == true then
+                page = node("admin", "network", "pppoewansettings")
+                page.target = cbi("admin_network/pppoewansettings")
+                page.title = _("Set PPPoE WAN Physical Setting")
+                page.order = 70
+		end
 
 		page = entry({"admin", "network", "diag_ping"}, post("diag_ping"), nil)
 		page.leaf = true
