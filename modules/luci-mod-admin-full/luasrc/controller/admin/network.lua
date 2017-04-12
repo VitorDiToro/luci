@@ -168,19 +168,18 @@ function index()
 		page.order  = 50
 		end
 
-		if user("Diagnostics") == true then
-		page = node("admin", "network", "diagnostics")
-		page.target = template("admin_network/diagnostics")
-		page.title  = _("Diagnostics")
-		page.order  = 60
-		end
-
                 if user("PPPoEWANSettings") == true then
                 page = node("admin", "network", "pppoewansettings")
                 page.target = cbi("admin_network/pppoewansettings")
                 page.title = _("Set PPPoE WAN Physical Setting")
                 page.order = 70
 		end
+
+		if user("Diagnostics") == true then
+		page = node("admin", "network", "diagnostics")
+		page.target = template("admin_network/diagnostics")
+		page.title  = _("Diagnostics")
+		page.order  = 60
 
 		page = entry({"admin", "network", "diag_ping"}, post("diag_ping"), nil)
 		page.leaf = true
