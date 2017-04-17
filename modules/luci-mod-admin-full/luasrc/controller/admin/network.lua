@@ -168,7 +168,7 @@ function index()
 		page.order  = 50
 		end
 
-                if user("PPPoEWANSettings") == true then
+                if user("PPPoWANPhy") == true then
                 page = node("admin", "network", "pppoewansettings")
                 page.target = cbi("admin_network/pppoewansettings")
                 page.title = _("Set PPPoE WAN Physical Setting")
