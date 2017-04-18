@@ -1,5 +1,6 @@
 -- Copyright 2008 Steven Barth <steven@midlink.org>
 -- Copyright 2010-2015 Jo-Philipp Wich <jow@openwrt.org>
+-- Copyright 2017 Vitor R. Di Toro <vitorditoro@inatel.br>
 -- Licensed to the public under the Apache License 2.0.
 
 local utl = require "luci.util"
@@ -87,6 +88,7 @@ network_subs:value("Switch", "Switch")
 network_subs:value("Dhcp", "DHCP and DNS")
 network_subs:value("Firewall", "Firewall")
 network_subs:value("Diagnostics", "Diagnostics")
+network_subs:value("PPPoWANPhy","Set PPPoE WAN Physical Setting")
 
 m.redirect = luci.dispatcher.build_url("admin/users/users")
 
