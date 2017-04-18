@@ -88,7 +88,7 @@ network_subs:value("Switch", "Switch")
 network_subs:value("Dhcp", "DHCP and DNS")
 network_subs:value("Firewall", "Firewall")
 network_subs:value("Diagnostics", "Diagnostics")
-network_subs:value("PPPoWANPhy","Set PPPoE WAN Physical Setting")
+network_subs:value("pppoewansettings","Set PPPoE WAN Physical Setting")
 
 m.redirect = luci.dispatcher.build_url("admin/users/users")
 
